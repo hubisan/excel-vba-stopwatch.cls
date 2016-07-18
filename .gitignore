@@ -1,0 +1,44 @@
+#Archiv Dateien
+_Archiv/
+
+# Created by https://www.gitignore.io/api/windows,microsoftoffice
+
+### Windows ###
+# Windows image file caches
+*Thumbs.db
+*ehthumbs.db
+
+# Folder config file
+*Desktop.ini
+
+# Recycle Bin used on file shares
+.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+### MicrosoftOffice ###
+*.tmp
+*~
+
+# Word temporary
+~.doc*
+
+# Excel temporary
+~.xls*
+
+# Excel Backup File
+*.xlk
+
+# PowerPoint temporary
+~.ppt*
+
+# Visio autosave temporary files
+*.~vsdx
