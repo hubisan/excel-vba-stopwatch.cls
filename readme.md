@@ -15,7 +15,7 @@ Methods and properties:
 - `.start`: start or restart the timer
 - `.Elapsed_ms`: get the elapsed time in milliseconds (like 1004) As Double
 - `.Elapsed_sec(Optional number_of_digits_after_decimal As Integer = 3)`: get the elapsed time in seconds as Double.  
-  You can round to a number of digits after the decimal by providing the optional parameter, tehdefault is 3 = millliseconds.
+  You can round to a number of digits after the decimal by providing the optional parameter, the default is 3 = millliseconds.
 
 Example usage:
 
