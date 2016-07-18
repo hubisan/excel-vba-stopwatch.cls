@@ -24,7 +24,7 @@ Private Declare Function getTickCount Lib "kernel32" Alias _
 
 '*************************************************************************************
 
-'Class Module: StopwatchMilliseconds
+'Class Module: Stopwatch
 'Start a timer and get elapsed time in ms or seconds
 'Use start again if you want to start a new timer.
 
