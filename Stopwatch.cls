@@ -20,13 +20,17 @@ Private Declare Function getTickCount Lib "kernel32" Alias _
 #End If
 
 'This content is released under the (http://opensource.org/licenses/MIT) MIT License.
-'Copyright (c) Daniel Hubmann (hubisan@gmail.com)
+'Copyright (c) 2016 Daniel Hubmann (hubisan@gmail.com)
 
 '*************************************************************************************
 
-'Class Module: Stopwatch
+'Class Module: stopwatch
+'Author: Daniel Hubmann <hubisan@gmail.com>
+'Url: https://github.com/hubisan/excel-vba-stopwatch.cls
+
 'Start a timer and get elapsed time in ms or seconds
-'Use start again if you want to start a new timer.
+'Use start again if you want to restart the timer.
+'It's also possible to stop the timer, but there are not many use cases for that.
 
 'Example usage:
 'Sub example()
@@ -41,6 +45,7 @@ Private Declare Function getTickCount Lib "kernel32" Alias _
 'METHODS & PROPERTIES
 '-------------------------------------------------------------------------------------
 'Public Sub start()
+'Public Sub stop()
 'Public Function Elapsed_ms() As Double
 'Public Function Elapsed_sec(Optional number_of_digits_after_decimal As Integer = 3) As Double
 'Public Function get_time() As Double
@@ -50,13 +55,23 @@ Private Declare Function getTickCount Lib "kernel32" Alias _
 Option Explicit
 
 Private start_time As Double
+Private end_time As Double
 
 '-------------------------------------------------------------------------------------
-'Start the stopwatch
+'Start the timer
 'Sets the start time to used later on to calculate elapsed time
 '-------------------------------------------------------------------------------------
 Public Sub start()
     start_time = get_time
+    end_time = 0
+End Sub
+
+'-------------------------------------------------------------------------------------
+'Stop the timer
+'Sets the end time
+'-------------------------------------------------------------------------------------
+Public Sub stop_it()
+    end_time = get_time
 End Sub
 
 '-------------------------------------------------------------------------------------
@@ -64,7 +79,11 @@ End Sub
 '@return Dbl: the elapsed time in milliseconds
 '-------------------------------------------------------------------------------------
 Public Function Elapsed_ms() As Double
-    Elapsed_ms = Round((get_time - start_time) * 1000, 0)
+    If end_time = 0 Then
+        Elapsed_ms = Round((get_time - start_time) * 1000, 0)
+    Else
+        Elapsed_ms = Round((end_time - start_time) * 1000, 0)
+    End If
 End Function
 
 '-------------------------------------------------------------------------------------
@@ -73,7 +92,11 @@ End Function
 '@return Dbl: the elapsed time in seconds
 '-------------------------------------------------------------------------------------
 Public Function Elapsed_sec(Optional number_of_digits_after_decimal As Integer = 3) As Double
-    Elapsed_sec = Round(get_time - start_time, number_of_digits_after_decimal)
+    If end_time = 0 Then
+        Elapsed_sec = Round(get_time - start_time, number_of_digits_after_decimal)
+    Else
+        Elapsed_sec = Round(end_time - start_time, number_of_digits_after_decimal)
+    End If
 End Function
 
 '-------------------------------------------------------------------------------------
