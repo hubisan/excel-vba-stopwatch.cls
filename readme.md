@@ -5,8 +5,8 @@ Excel VBA class to Start a timer and get the elapsed time in milliseconds or sec
 ## Installation
 
 - *Download the workbook*: You can download [stopwatch.xlsm](../../raw/master/stopwatch.xlsm). This workbook inlcudes the class and a module with two examples on how to use the class.
-- *Or copy the code*: Copy the class code starting at line 10 `#If VBA7` from [raw](../../raw/master/Stopwatch.cls) and paste into a new class in your workbook.
-- *Or get the repository*: Clone or [download](../../archive/master.zip) the repository and import the file Stopwatch.cls into your workbook to use the class.
+- *Or copy the code*: Copy the class code starting at line 10 `#If VBA7` from [raw](../../raw/master/stopwatch.cls) and paste into a new class in your workbook.
+- *Or get the repository*: Clone or [download](../../archive/master.zip) the repository and import the file stopwatch.cls into your workbook to use the class.
 
 ### Usage
 
